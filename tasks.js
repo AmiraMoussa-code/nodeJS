@@ -39,8 +39,9 @@ function onDataReceived(text) {
   }
   else if(text === 'hello\n'){
     hello();
-  }
-  else{
+  }else if (text === "help\n"){
+    help();
+  }else{
     unknownCommand(text);
   }
 }
@@ -67,6 +68,16 @@ function hello(){
   console.log('hello!')
 }
 
+/**
+ * Says help to see the command options
+ *
+ * @returns {void}
+ */
+function help(){
+  console.log('1-hello\n2-quit');
+  // process.help();
+}
+
 
 /**
  * Exits the application
@@ -77,6 +88,8 @@ function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
+
+
 
 // The following line starts the application
 startApp("Amira Moussa")
